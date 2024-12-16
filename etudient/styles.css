@@ -118,7 +118,7 @@ body {
         }
         
 
-        .form-group1 input, .form-group1 textarea {
+        .form-group1 input, .form-group1 textarea , .form-group1 select{
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;

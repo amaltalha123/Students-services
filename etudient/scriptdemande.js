@@ -56,6 +56,23 @@ typeDocumentSelect.addEventListener("change", function () {
         `;
         dynamicFields.appendChild(encadrantEcoleField);
     }
+    if(this.value === "Relevé de notes"){
+        const niveau_demandeField = document.createElement("div");
+        niveau_demandeField.className = "form-group1";
+        niveau_demandeField.innerHTML = `
+            
+            <label for="niveau_demande">Séléctionner le niveau :</label>
+                <select id="niveau_demande" name="niveau_demande" required>
+                    <option value="">-- Sélectionner un type --</option>
+                    <option value="2AP1">2AP1</option>
+                    <option value="2PA2">2AP2</option>
+                    <option value="CI1">CI1</option>
+                    <option value="CI2">CI2</option>
+                    <option value="CI3">CI3</option>
+                </select>
+        `;
+        dynamicFields.appendChild(niveau_demandeField);
+    }
 });
 
      
@@ -125,9 +142,10 @@ typeDocumentSelect.addEventListener("change", function () {
             const prenom = document.getElementById('prenom').value;
             const cin = document.getElementById('CIN').value;
             const type_document = document.getElementById('type_document').value;
+            niveau_demande
         
             // Récupération des champs dynamiques (si "Convention de stage" est sélectionnée)
-            let additionalData = '';
+            let additionalData1 = '';
             if (type_document === 'Convention de stage') {
                 const entreprise = document.getElementById('entreprise')?.value || '';
                 const duree_stage = document.getElementById('duree_stage')?.value || '';
@@ -137,7 +155,13 @@ typeDocumentSelect.addEventListener("change", function () {
                 const encadrant_ecole = document.getElementById('encadrant_ecole')?.value || '';
         
                 // Ajouter les champs dynamiques à la requête
-                additionalData = `&entreprise=${encodeURIComponent(entreprise)}&duree_stage=${encodeURIComponent(duree_stage)}&sujet_stage=${encodeURIComponent(sujet_stage)}&localisation=${encodeURIComponent(localisation)}&encadrant_entreprise=${encodeURIComponent(encadrant_entreprise)}&encadrant_ecole=${encodeURIComponent(encadrant_ecole)}`;
+                additionalData1 = `&entreprise=${encodeURIComponent(entreprise)}&duree_stage=${encodeURIComponent(duree_stage)}&sujet_stage=${encodeURIComponent(sujet_stage)}&localisation=${encodeURIComponent(localisation)}&encadrant_entreprise=${encodeURIComponent(encadrant_entreprise)}&encadrant_ecole=${encodeURIComponent(encadrant_ecole)}`;
+            }
+            let additionalData2 = '';
+            if (type_document === 'Relevé de notes') {
+                const niveau_demande = document.getElementById('niveau_demande')?.value || '';
+                // Ajouter les champs dynamiques à la requête
+                additionalData2 = `&niveau_demande=${encodeURIComponent(niveau_demande)}`;
             }
         
             // Envoi de la requête AJAX
@@ -152,7 +176,10 @@ typeDocumentSelect.addEventListener("change", function () {
                     console.error('Erreur lors de l\'envoi de la requête :', xhr.status);
                 }
             };
-        
-            xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}${additionalData}`);
+            if (type_document === 'Convention de stage') {
+                xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}${additionalData1}`);
+            }else if(type_document === 'Relevé de notes'){
+                xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}${additionalData2}`);
+            }
         });
         

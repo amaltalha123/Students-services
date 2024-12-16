@@ -31,7 +31,7 @@ $sujet_stage = isset($_POST['sujet_stage']) ? htmlspecialchars($_POST['sujet_sta
 $localisation = isset($_POST['localisation']) ? htmlspecialchars($_POST['localisation']) : '';
 $encadrant_entreprise = isset($_POST['encadrant_entreprise']) ? htmlspecialchars($_POST['encadrant_entreprise']) : '';
 $encadrant_ecole = isset($_POST['encadrant_ecole']) ? htmlspecialchars($_POST['encadrant_ecole']) : '';
-
+$niveau_demande = isset($_POST['niveau_demande']) ? htmlspecialchars($_POST['niveau_demande']) : '';
 
 // Validation simple des données
 if (empty($name) || empty($email) || empty($prenom) || empty($numero_apogee) || empty($type_document)) {
@@ -62,21 +62,27 @@ if (empty($name) || empty($email) || empty($prenom) || empty($numero_apogee) || 
                 
 
             $stmt_insert->bind_param("isssssiss", $id_etudiant, $etat_demande, $type_document, $localisation, $encadrant_ecole, $encadrant_entreprise, $dure_stage, $sujet_stage, $entreprise);
-        } elseif (in_array($type_document, ["Attestation de réussite", "Attestation de scolarité", "Relevé de notes"])) {
-            $stmt_insert = $conn->prepare("INSERT INTO demandes 
+        }elseif (in_array($type_document, ["Attestation de réussite", "Attestation de scolarité"])) {
+                $stmt_insert = $conn->prepare("INSERT INTO demandes 
                 (id_etudiant, etat_demande, type_document) 
                 VALUES (?, ?, ?)");
-            $stmt_insert->bind_param("iss", $id_etudiant, $etat_demande, $type_document);
-        } else {
-            echo "Type de document invalide.";
-            exit;
+                $stmt_insert->bind_param("iss", $id_etudiant, $etat_demande, $type_document);
+
+        }elseif (in_array($type_document, ["Relevé de notes"])) {
+                $stmt_insert = $conn->prepare("INSERT INTO demandes 
+                (id_etudiant, etat_demande, type_document,niveau_demande) 
+                VALUES (?, ?, ?, ?)");
+                $stmt_insert->bind_param("isss", $id_etudiant, $etat_demande, $type_document,$niveau_demande); 
+        }else {
+                echo "Type de document invalide.";
+                exit;
         }
 
         if ($stmt_insert->execute()) {
-            echo "Formulaire soumis avec succès.";
-            exit;
+                echo "Formulaire soumis avec succès.";
+                exit;
         } else {
-            echo "Erreur : " . $conn->error;
+                echo "Erreur : " . $conn->error;
         }
         $stmt_insert->close();
     } else {
