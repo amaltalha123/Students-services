@@ -43,8 +43,8 @@ $conn->close();
                     <li><a href="admindashboard.php"><i class="fa fa-home"></i> Dashboard</a></li>
                     <li><a href="admin.php"><i class="fa fa-exclamation-circle"></i> Liste des Demandes</a></li>
                     <li><a href="historique.php"><i class="fa fa-history"></i> Historique</a></li>
-                    <li><a href="Reclamation.php"><i class="fa fa-cog"></i> Reclamations</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Paramètre</a></li>
+                    <li><a href="Reclamation.php"><i class="fa fa-exclamation-circle"></i> Reclamations</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -81,7 +81,7 @@ $conn->close();
         <div class="main">
             <div class="main-container">
 
-                <h2>Liste des Réclamations</h2>
+                <h1>Liste des Réclamations</h1>
                 <table id="reclamationTable">
                     <thead>
                         <tr>
@@ -205,7 +205,7 @@ $conn->close();
         });
 
         // Bloquer le retour en arrière après déconnexion
-        if (window.location.pathname === '/chemin/vers/accueill.php') {
+        if (window.location.pathname === 'Students-sevices/accueill.php') {
             history.pushState(null, null, window.location.href);
             window.onpopstate = function() {
                 alert("Retour arrière bloqué !");

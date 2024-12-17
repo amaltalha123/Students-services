@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-family: Arial, Helvetica, sans-serif, sans-serif
     
 }
 
@@ -13,11 +13,9 @@
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to bottom, #FBC4AB, #C69F9A);
-    padding: 10px 30px 10px 30px;
+    padding: 10px 20px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
 }
 
 
@@ -27,7 +25,6 @@
     gap: 15px;
     font-family: cursive;
     font-weight: bold;
-    margin: 0 20px 0 20px;
 }
 
 
@@ -200,76 +197,15 @@ button#modeToggle {
     padding: 20px;
     transition: margin-left 0.3s ease;
     text-align: center;
-    
 }
 
-.main-container  h1 {
-    text-align: center;
-    font-weight: 600;
-    color:  #C69F9A;
-    padding: 15px 0;
-    margin: 0;
+.main-container h2 {
+    padding-top: 40px;
+    color: #2c3e50;
 }
 
 
-table {
-    margin: 50px auto;
-    border-collapse: collapse;
-    width: 80%;
-    max-width: 1000px;
-    border: 1px solid #D5BDAF; /* Bordure avec une teinte douce */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #FFFFFF; /* Fond du tableau */
-}    
-  
-th {
-    background-color: #C17C74; /* Couleur des en-têtes */
-    color: #FFF;
-    font-weight: bold;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 2px solid #EBE8D0; /* Lien avec le fond */
-}
 
-td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #EBD8D0;
-    color: #333;
-}
-
-tr:nth-child(even) {
-    background-color: #F5EBE0; /* Lignes alternées */
-}
-
-tr:hover {
-    background-color: #D5BDAF; /* Survol */
-    transform: scale(1.01);
-    transition: all 0.2s ease-in-out;
-}
-
-  table td button{
-
-    text-decoration: none;
-    color: #C17C74; /* Couleur des liens */
-    font-weight: bold;
-    margin: 0 5px;
-  }
-table td button:hover{
-    color: #C69F9A; /* Lien survolé */
-    text-decoration: underline;
-
-}
-@media only screen and (max-width: 768px) {
-    table {
-        width: 95%;
-    }
-
-    th, td {
-        padding: 10px;
-        font-size: 14px;
-    }
-}
 footer {
     position: fixed;
     width: 100%;
@@ -277,6 +213,6 @@ footer {
     padding: 10px 0;
     background-color: #2c3e50;
     color: white;
-    z-index: 0;
-    bottom:0px; 
+    z-index: 0; /* Assurez-vous que le footer est en dessous du menu */
+    top: 94vh;
 }

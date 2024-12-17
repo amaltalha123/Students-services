@@ -1,0 +1,409 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, sans-serif
+    
+  }
+  
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #FBC4AB, #C69F9A);
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .navbar-items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: cursive;
+    font-weight: bold;
+  }
+  
+  
+  .navbar .profile-icon, .navbar .logout-icon, #modeToggle {
+    margin-left: 15px;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .navbar .profile-icon, .navbar .logout-icon, #modeToggle:hover {
+    color: rgba(255, 255, 255, 0.904);
+  }
+  
+  
+  
+  #modeToggle {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+  }
+  
+  #modeToggle i {
+    font-size: 20px;
+  }
+  
+  .profile-icon, .logout-icon {
+    font-size: 20px;
+  }
+  
+  
+  body.dark-mode {
+    background-color: rgba(0, 0, 0, 0.856);
+    color: white;
+  }
+  
+  body.dark-mode .navbar {
+   background:  linear-gradient(to bottom, #f4978ec9, #c69f9ac0);
+  }
+  
+  button#modeToggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  
+  .menu-i {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    margin-top: 0;
+    margin-left: 0;
+    background: linear-gradient(to bottom, #FBC4AB, #C69F9A);
+    cursor: pointer;
+  }
+  
+  
+  .menu {
+    display: none;
+    position: fixed;
+    top: 55px; 
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 60px); 
+    background-color: rgb(235, 233, 233);
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10; 
+    transition: width 0.3s ease;
+  }
+  
+  .menu.open {
+    display: block;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #555;
+  }
+  
+  .menu ul li:hover {
+    background: linear-gradient(to bottom, #FBC4AB , #C69F9A);
+  }
+  
+  
+  #logoutCard {
+    position: absolute;
+    top: 13%;
+    right: 10px;
+    transform: translateY(-40%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 200px;
+  }
+  
+  #logoutCard p {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  
+  #logoutCard .btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  #logoutCard .btn button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #confirmLogout {
+    background-color: #FF69B4;
+    color: white;
+  }
+  
+  #confirmLogout:hover {
+    background-color: #ff69b4b2;
+    color: white;
+  }
+  
+  #cancelLogout {
+    background-color: #C69F9A;
+    color: white;
+  }
+  
+  #cancelLogout:hover {
+    background-color: #c69f9ace;
+    color: white;
+  }
+  
+  
+  .main {
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    text-align: center;
+  }
+  
+   h1 {
+    text-align: center;
+    font-weight: 600;
+    color:  #C69F9A;
+    padding: 15px 0;
+    margin: 0;
+  }
+  
+  
+  
+  footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: white;
+    z-index: 0; /* Assurez-vous que le footer est en dessous du menu */
+    top: 94vh;
+  }
+  
+  
+  /* Stylisation générale de la page */
+  /* Style général de la page */
+  body {
+    font-family: Arial, sans-serif;
+     /* Couleur de fond de la page foncée vers le gris */
+    color: #4A4A4A; /* Couleur de texte plus foncée */
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  .container {
+      display: flex;
+      flex-direction: row; /* Alignement en ligne (horizontale) */
+      justify-content: space-between;
+  }
+  .card-header button {
+    background-color: #C17C74; /* Boutons avec une couleur gris-brun */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  .card-header .reset-button {
+    background-color: #C17C74; /* Couleur gris-brun */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Aligne le texte au centre */
+    display: inline-block; /* Pour s'assurer que le <a> se comporte comme un bouton */
+    text-decoration: none; /* Supprime le soulignement du lien */
+  }
+  
+  
+  button:hover {
+    background-color: #A8A38D; 
+  }
+  
+  /* Partie filtre (1/5 de la page) */
+  .filter-section {
+      width: 20%; /* Prend 1/5 de la page */
+      padding: 15px;
+      border-right: 2px solid #ddd;
+  }
+  
+  /* Partie historique des demandes (4/5 de la page) */
+  .history-section {
+      width: 75%; /* Prend 4/5 de la page */
+      padding: 15px;
+      overflow-x: auto; /* Permet de défiler horizontalement si nécessaire */
+  }
+  
+  /* Stylisation des cases à cocher personnalisées */
+  input[type="checkbox"] {
+      display: none; /* Masquer les cases à cocher par défaut */
+  }
+  
+  input[type="checkbox"] + label {
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 16px;
+      display: inline-block;
+      line-height: 20px;
+  }
+  
+  input[type="checkbox"] + label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #C17C74;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: all 0.3s;
+  }
+  
+  input[type="checkbox"]:checked + label::before {
+      background-color: #C17C74;
+      border-color: #C17C74;
+      content: '✔';
+      color: white;
+      text-align: center;
+      line-height: 18px;
+      font-size: 16px;
+  }
+  
+  input[type="checkbox"]:checked + label {
+      color: #C17C74;
+  }
+  
+  /* Stylisation des titres et des lignes */
+  .card-body h6 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+  }
+  
+  .card-body hr {
+      margin: 10px 0;
+      border-color: #C17C74;
+  }
+  
+  .card-body div {
+      margin-bottom: 10px;
+  }
+  
+  /* Tableau des demandes */
+  table {
+    margin: 50px auto;
+    margin-left: 30px;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 1000px;
+    border: 1px solid #D5BDAF; /* Bordure avec une teinte douce */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF; /* Fond du tableau */
+  }                                                                                                                                table {
+  
+  
+  th {
+    background-color: #C17C74; /* Couleur des en-têtes */
+    color: #FFF;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #EBE8D0; /* Lien avec le fond */
+  }
+  
+  td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #EBD8D0;
+    color: #333;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #F5EBE0; /* Lignes alternées */
+  }
+  
+  tr:hover {
+    background-color: #D5BDAF; /* Survol */
+    transform: scale(1.01);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #C17C74; /* Couleur des liens */
+    font-weight: bold;
+    margin: 0 5px;
+  }
+  
+  a:hover {
+    color: #C69F9A; /* Lien survolé */
+    text-decoration: underline;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+  
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+  }
+  footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: white;
+    z-index: 0; 
+  }

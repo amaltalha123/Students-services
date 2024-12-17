@@ -64,11 +64,11 @@ $conn->close();
             </div>
             <div class="menu" onmouseleave="closeMenu(event)">
                 <ul>
-                    <li><a href="admindashboard.php"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li><a href="admindashboard.php"><i class="fa fa-home"></i> Dashboard</a></li>
                     <li><a href="admin.php"><i class="fa fa-exclamation-circle"></i> Liste des Demandes</a></li>
-                    <li><a href="Reclamation.php"><i class="fa fa-cog"></i> Reclamations</a></li>
                     <li><a href="historique.php"><i class="fa fa-history"></i> Historique</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Paramètre</a></li>
+                    <li><a href="Reclamation.php"><i class="fa fa-exclamation-circle"></i> Reclamations</a></li>
+                    
                 </ul>
             </div>
         </div>

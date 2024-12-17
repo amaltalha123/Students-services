@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
            
             $_SESSION['user_id'] = $user_data['id_admin'];
             $_SESSION['username'] = $email;
-
+            $_SESSION['admin_name'] = $user_data['nom'];
           
             if ($password === $stored_password) {
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -245,5 +245,6 @@ font-size: 20px;
     </div>
     <script src="scriptconnexion.js">
 </script>
+
 </body>
 </html>
