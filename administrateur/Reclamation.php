@@ -102,7 +102,8 @@ $conn->close();
                         $sql = "SELECT 
                                 r.id_reclamation, 
                                 e.nom, 
-                                e.prenom, 
+                                e.prenom,
+                                e.email, 
                                 e.numero_apogee, 
                                 r.contenu_reclamation, 
                                 r.date_reclamation 

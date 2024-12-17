@@ -21,8 +21,8 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-    width: 200px;
-    background-color: #d5bdaf;
+    width: 250px;
+    background-color: #c7837c;
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */

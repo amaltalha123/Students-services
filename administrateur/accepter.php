@@ -403,8 +403,8 @@ $pdf->Output('F', $pdfFile);
             $moyenne = 0; // Aucun module trouvé
         }
     }
-    }else if($niveau=='2AP2'){
-        $requete = $pdo->prepare("SELECT * FROM 2ap2 WHERE id_etudiant = ?");
+    }else if($niveau=='2PA2'){
+        $requete = $pdo->prepare("SELECT * FROM 2AP2 WHERE id_etudiant = ?");
         $requete->execute([$id_etudiant]);   
 
         $pdf->SetFont('Arial', '', 12);
@@ -439,7 +439,6 @@ $pdf->Output('F', $pdfFile);
         }else {
             $moyenne = 0; // Aucun module trouvé
         }
-
 
     }else if($niveau=='CI2'){
 

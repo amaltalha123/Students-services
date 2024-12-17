@@ -85,9 +85,9 @@ exit;
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-        <a href="../acceuill.php"><button class="sidebar-btn">Acceuille</button></a>
-        <a href="Studentdemande.php"><button class="sidebar-btn">Ajouter une demande</button></a>
-        <a href="Student.php"><button class="sidebar-btn">Faire une réclamation</button></a>
+        <a href="../acceuill.php"><button class="sidebar-btn"><h3>Acceuille</h3></button></a>
+        <a href="Studentdemande.php"><button class="sidebar-btn"><h3>Ajouter une demande</h3></button></a>
+        <a href="Student.php"><button class="sidebar-btn"><h3>Faire une réclamation</h3></button></a>
         </div>
         
         <!-- Main Content -->

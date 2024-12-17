@@ -142,7 +142,7 @@ typeDocumentSelect.addEventListener("change", function () {
             const prenom = document.getElementById('prenom').value;
             const cin = document.getElementById('CIN').value;
             const type_document = document.getElementById('type_document').value;
-            niveau_demande
+            
         
             // Récupération des champs dynamiques (si "Convention de stage" est sélectionnée)
             let additionalData1 = '';
@@ -180,6 +180,11 @@ typeDocumentSelect.addEventListener("change", function () {
                 xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}${additionalData1}`);
             }else if(type_document === 'Relevé de notes'){
                 xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}${additionalData2}`);
+            }else if(type_document === 'Attestation de réussite'){
+                xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}`);
+            }else if(type_document === 'Attestation de scolarité'){
+                xhr.send(`nom=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&numero_apogee=${encodeURIComponent(numero_apogee)}&prenom=${encodeURIComponent(prenom)}&CIN=${encodeURIComponent(cin)}&type_document=${encodeURIComponent(type_document)}`);
             }
         });
         
+       

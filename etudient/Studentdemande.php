@@ -58,7 +58,7 @@ if (empty($name) || empty($email) || empty($prenom) || empty($numero_apogee) || 
         if ($type_document === "Convention de stage") {
             $stmt_insert = $conn->prepare("INSERT INTO demandes 
                 (id_etudiant, etat_demande, type_document, lieu_stage, encadrant_ecole, encadrant_entreprise, dure_stage, sujet_stage, entreprise) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)");
                 
 
             $stmt_insert->bind_param("isssssiss", $id_etudiant, $etat_demande, $type_document, $localisation, $encadrant_ecole, $encadrant_entreprise, $dure_stage, $sujet_stage, $entreprise);
@@ -110,9 +110,9 @@ $conn->close();
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-        <a href="../acceuill.php"><button class="sidebar-btn">Acceuille</button></a>
-        <a href="Studentdemande.php"><button class="sidebar-btn">Demander un Document</button></a>
-        <a href="Student.php"><button class="sidebar-btn">Faire une réclamation</button></a>
+        <a href="../acceuill.php"><button class="sidebar-btn"><h3>Acceuille</h3></button></a>
+        <a href="Studentdemande.php"><button class="sidebar-btn"><h3>Demander un Document</h3></button></a>
+        <a href="Student.php"><button class="sidebar-btn"><h3>Faire une réclamation</h3></button></a>
         </div>
         
         <!-- Main Content -->
