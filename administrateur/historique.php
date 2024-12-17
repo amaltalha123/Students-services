@@ -38,7 +38,7 @@ if ($conn->connect_error) {
                     <li><a href="admin.php"><i class="fa fa-exclamation-circle"></i> Liste des Demandes</a></li>
                     <li><a href="Reclamation.php"><i class="fa fa-cog"></i> Reclamations</a></li>
                     <li><a href="historique.php"><i class="fa fa-history"></i> Historique</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Paramètre</a></li>
+                    
                 </ul>
             </div>
         </div>

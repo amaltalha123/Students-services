@@ -14,6 +14,20 @@ $sql_total_etudiants = "SELECT COUNT(*) AS total_etudiants FROM etudiants";
 $result_total_etudiants = $conn->query($sql_total_etudiants);
 $total_etudiants = $result_total_etudiants->fetch_assoc()['total_etudiants'];
 
+$sql_total_info = "SELECT COUNT(*) AS total_info FROM etudiants WHERE filiere='Genie informatique'";
+$result_total_info = $conn->query($sql_total_info);
+$total_etudiants_info = $result_total_info->fetch_assoc()['total_info'];
+
+$sql_total_gscm = "SELECT COUNT(*) AS total_gscm FROM etudiants WHERE filiere='GSCM'";
+$result_total_gscm = $conn->query($sql_total_gscm);
+$total_etudiants_gscm = $result_total_gscm->fetch_assoc()['total_gscm'];
+
+$sql_total_2ap = "SELECT COUNT(*) AS total_2ap FROM etudiants WHERE filiere='2AP1' OR filiere='2AP2'";
+$result_total_2ap = $conn->query($sql_total_2ap);
+$total_etudiants_2ap = $result_total_2ap->fetch_assoc()['total_2ap'];
+
+
+
 $sql_total_demandes = "SELECT COUNT(*) AS total_demandes FROM demandes";
 $result_total_demandes = $conn->query($sql_total_demandes);
 $total_demandes = $result_total_demandes->fetch_assoc()['total_demandes'];
@@ -116,9 +130,24 @@ $conn->close();
                             <p>Total Étudiants</p>
                         </div>
                         <div class="stat">
+                            <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: #1e9aff;"></i>
+                            <h2><?= $total_etudiants_info ?></h2>
+                            <p>Total des étudiant en Génie informatique</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: #FF69B4;"></i>
+                            <h2><?= $total_etudiants_gscm ?></h2>
+                            <p>Total des étudiants en GSCM</p>
+                        </div>
+                        <div class="stat">
                             <i class="fas fa-file-alt" style="font-size: 2.5rem; color: #1e9aff;"></i>
                             <h2><?= $total_demandes ?></h2>
                             <p>Total Demandes</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: #1e9aff;"></i>
+                            <h2><?= $total_etudiants_2ap ?></h2>
+                            <p>Total des étudiant en années préparatoire</p>
                         </div>
                         <div class="stat">
                             <i class="fas fa-check-circle" style="font-size: 2.5rem; color: #28a745;"></i>
